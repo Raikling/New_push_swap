@@ -2,14 +2,17 @@
 
 void print_list(t_stack_node *head)
 {
-    t_stack_node *current = head;
     if (!head)
         return;
-    do
+
+    t_stack_node *current = head;
+    printf("%d ", current->value);
+    current = current->next;
+    while (current != head)
     {
         printf("%d ", current->value);
         current = current->next;
-    } while (current != head);
+    }
     printf("\n");
 }
 
@@ -26,6 +29,12 @@ int main(int ac, char **av)
         return (1);
     if (process_args(ac, av, &a))
         return (1);
+    print_list(a);
+    sa(&a);
+    print_list(a);
+    ra(&a);
+    print_list(a);
+    ra(&a);
     print_list(a);
     stack_free(&a);
     return (0);

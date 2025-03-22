@@ -1,5 +1,5 @@
 NAME = push_swap
-SRCS = push_swap.c add_libft.c args_part.c errors_and_free.c stack_init.c
+SRCS = push_swap.c add_libft.c args_part.c errors_and_free.c stack_init.c swap.c rotate.c
 OBJS = $(SRCS:.c=.o)
 LIBFT = Libft/libft.a
 FT_PRINTF = ft_Printf/libftprintf.a

@@ -36,6 +36,14 @@ void free_errors(t_stack_node **a, char **av);
 int process_args(int ac, char **av, t_stack_node **a);
 char *fill_all_args(int ac, char **av);
 long	ft_atol(const char *str);
+void sa(t_stack_node **a);
+void sb(t_stack_node **b);
+void ss(t_stack_node **a,t_stack_node **b);
+void ra(t_stack_node **a);
+void rb(t_stack_node **b);
+void rr(t_stack_node **a, t_stack_node **b);
+
+
 
 
 
