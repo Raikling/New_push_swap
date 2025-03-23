@@ -6,11 +6,17 @@ void print_list(t_stack_node *head)
         return;
 
     t_stack_node *current = head;
-    printf("A: %d ", current->value);
+    printf("\nA: \n%d ", current->value);
+    printf("rot_a: %d, rot_b: %d, steps: %d\n", current->move.rot_a, current->move.rot_b, current->move.steps);
+    printf("distance_w_rot: %d\n", distance_w_rot(current));
+    printf("distance_w_rev_rot: %d\n", distance_w_rev_rot(current));
     current = current->next;
     while (current != head)
     {
         printf("%d ", current->value);
+        printf("rot_a: %d, rot_b: %d, steps: %d\n", current->move.rot_a, current->move.rot_b, current->move.steps);
+        printf("distance_w_rot: %d\n", distance_w_rot(current));
+        printf("distance_w_rev_rot: %d\n", distance_w_rev_rot(current));
         current = current->next;
     }
     printf("\n");
@@ -21,11 +27,17 @@ void print_list_b(t_stack_node *head)
         return;
 
     t_stack_node *current = head;
-    printf("B: %d ", current->value);
+    printf("\nB: %d ", current->value);
+    printf("rot_a: %d, rot_b: %d, steps: %d\n", current->move.rot_a, current->move.rot_b, current->move.steps);
+    printf("distance_w_rot: %d\n", distance_w_rot(current));
+    printf("distance_w_rev_rot: %d\n", distance_w_rev_rot(current));
     current = current->next;
     while (current != head)
     {
         printf("%d ", current->value);
+        printf("rot_a: %d, rot_b: %d, steps: %d\n", current->move.rot_a, current->move.rot_b, current->move.steps);
+    printf("distance_w_rot: %d\n", distance_w_rot(current));
+    printf("distance_w_rev_rot: %d\n", distance_w_rev_rot(current));
         current = current->next;
     }
     printf("\n");
@@ -58,17 +70,26 @@ int main(int ac, char **av)
     
 
 
-    printf("is a ordered: %d\n", is_a_ordered(a));
-    printf("is a sorted: %d\n", is_a_ascen(a));
+    // printf("is a ordered: %d\n", is_a_ordered(a));
+    // printf("is a sorted: %d\n", is_a_ascen(a));
     print_list(a);
+    optimal_rotations(a, b);
+    print_list(a);
+    pb(&a, &b);
+    pb(&a, &b);
 
-    int distance = distance_w_rot(a);
-    printf("distance_w_rot: %d\n", distance);
+    print_list(a);
+    print_list_b(b);
 
-    // Move to a different node and test again
-    a = a->next->next; // Move to the node with value -2
-    distance = distance_w_rot(a);
-    printf("distance_w_rot from node -2: %d\n", distance);
+    // Test optimal_rotations
+    optimal_rotations(a, b);
+    print_list(a);
+    print_list_b(b);
+    
+    
+
+
+    
     
     stack_free(&a);
     stack_free(&b);

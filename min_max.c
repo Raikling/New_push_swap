@@ -5,7 +5,7 @@ t_stack_node *min_node_in_stack(t_stack_node *stack)
 {
     t_stack_node *min_node;
 
-    if (!stack)
+    if (stack == NULL)
         return (0);
     min_node = stack;
     stack = stack->next;
@@ -22,7 +22,7 @@ t_stack_node *max_node_in_stack(t_stack_node *stack)
 {
     t_stack_node *max_node;
 
-    if (!stack)
+    if (stack == NULL)
         return (0);
     max_node = stack;
     stack = stack->next;
