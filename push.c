@@ -49,6 +49,8 @@ static int push(t_stack_node **src, t_stack_node **dst)
     return (1);
 }
 
+
+
 void pa(t_stack_node **a, t_stack_node **b)
 {
     if (push(b, a))

@@ -1,35 +1,32 @@
 
 #include "push_swap.h"
 
-int distance_w_rot(t_stack_node *stack)
+int	dist_w_rot(t_stack_node *node)
 {
-    int distance;
+	int	dist;
 
-    distance = 0;
-    if (stack == NULL || stack->head)
-        return (distance);
-    while (!stack->head)
-    {
-        distance++;
-        stack = stack->prev;
-    }
-    return (distance);
+	dist = 0;
+	if (node == NULL || node->head == true)
+		return (dist);
+	while (node->head != true)
+	{
+		++dist;
+		node = node->prev;
+	}
+	return (dist);
 }
 
-
-int distance_w_rev_rot(t_stack_node *stack)
+int	dist_w_rev_rot(t_stack_node *node)
 {
-    int distance;
+	int	dist;
 
-    distance = 0;
-    if (stack == NULL || stack->head)
-        return (distance);
-    while (!stack->head)
-    {
-        distance++;
-        stack = stack->next;
-    }
-    return (distance);
+	dist = 0;
+	if (node == NULL || node->head == true)
+		return (dist);
+	while (node->head != true)
+	{
+		++dist;
+		node = node->next;
+	}
+	return (dist);
 }
-
-

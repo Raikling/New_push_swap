@@ -1,24 +1,20 @@
 
 #include "push_swap.h"
 
-int stack_len(t_stack_node *stack)
+int	stack_len(t_stack_node *stack)
 {
-	int len;
+	int	len;
 
-	if (!stack)
+	if (stack == NULL)
 		return (0);
 	if (stack == stack->next)
 		return (1);
 	stack = stack->next;
 	len = 1;
-	while (!stack->head)
+	while (stack->head != true)
 	{
+		++len; //change is later
 		stack = stack->next;
-		len++;
 	}
 	return (len);
 }
-
-
-
-

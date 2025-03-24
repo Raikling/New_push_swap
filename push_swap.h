@@ -47,20 +47,24 @@ void rrb(t_stack_node **b);
 void rrr(t_stack_node **a, t_stack_node **b);
 void pa(t_stack_node **a, t_stack_node **b);
 void pb(t_stack_node **a, t_stack_node **b);
-t_stack_node *min_node_in_stack(t_stack_node *stack);
-t_stack_node *max_node_in_stack(t_stack_node *stack);
-int stack_len(t_stack_node *stack);
-int is_a_ordered(t_stack_node *a);
-int is_a_ascen(t_stack_node *a);
-int is_b_descen(t_stack_node *b);
+int	stack_len(t_stack_node *stack);
+int	is_a_ordered(t_stack_node *a);
+t_stack_node	*min_node_in_stack(t_stack_node *stack);
+t_stack_node	*max_node_in_stack(t_stack_node *stack);
 void sort_three(t_stack_node **stack);
-int distance_w_rot(t_stack_node *stack);
-int distance_w_rev_rot(t_stack_node *stack);
-void finish(t_stack_node **a);
-void turk(t_stack_node **a, t_stack_node **b);
-t_stack_node *new_b_pos(t_stack_node *b, t_stack_node *node);
-void optimal_rotations(t_stack_node *a, t_stack_node *b);
-void push_from_a_to_b(t_stack_node **a, t_stack_node **b);
+void	turk(t_stack_node **a, t_stack_node **b);
+int	is_a_sorted(t_stack_node *a);
+int	is_b_sorted(t_stack_node *b);
+int	dist_w_rot(t_stack_node *node);
+int	dist_w_rev_rot(t_stack_node *node);
+void	finish_a(t_stack_node **a);
+void	push_from_a_to_b(t_stack_node **a, t_stack_node **b);
+void	fill_move(t_stack_node *a, t_stack_node *b);
+void	empty_b(t_stack_node **a, t_stack_node **b);
+
+
+
+
 
 
 

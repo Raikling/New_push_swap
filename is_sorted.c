@@ -1,28 +1,28 @@
 
 #include "push_swap.h"
 
-int is_a_ascen(t_stack_node *a)
+int	is_a_sorted(t_stack_node *a)
 {
-    if (!a)
-        return (1);
-    while (!a->next->head)
-    {
-        if (a->value > a->next->value)
-            return (0);
-        a = a->next;
-    }
-    return (1);
+	if (a == NULL)
+		return (true);
+	while (a->next->head != true)
+	{
+		if (a->value > a->next->value)
+			return (false);
+		a = a -> next;
+	}
+	return (true);
 }
 
-int is_b_descen(t_stack_node *b)
+int	is_b_sorted(t_stack_node *b)
 {
-    if (!b)
-        return (1);
-    while (!b->next->head)
-    {
-        if (b->value < b->next->value)
-            return (0);
-        b = b->next;
-    }
-    return (1);
+	if (b == NULL)
+		return (true);
+	while (b->next->head != true)
+	{
+		if (b->value < b->next->value)
+			return (false);
+		b = b -> next;
+	}
+	return (true);
 }
