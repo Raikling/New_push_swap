@@ -26,7 +26,7 @@ t_stack_node *stack_init(t_stack_node **stack, char **av)
     if (!av || !av[0])
         return (NULL);
 
-    stack_head = create_node(ft_atol(av[0]));
+    stack_head = create_node(ft_atol(av[0])); //3
     if (stack_head == NULL)
     {
         stack_free(&stack_head);
@@ -41,18 +41,18 @@ t_stack_node *stack_init(t_stack_node **stack, char **av)
     node_prev = stack_head;
     while (av[i])
     {
-        node_prev->next = create_node(ft_atol(av[i])); //10
+        node_prev->next = create_node(ft_atol(av[i]));
         if (node_prev->next == NULL)
         {
             stack_free(&stack_head);
             return (NULL);
         }
-        node_prev->next->next = stack_head; //10->next = 27
-        node_prev->next->prev = node_prev; //10->prev = 27
-        node_prev = node_prev->next; //node_prev = 10
-        node_prev->head = false; //10->head = false
+        node_prev->next->next = stack_head; 
+        node_prev->next->prev = node_prev;  
+        node_prev = node_prev->next; 
+        node_prev->head = false;
         i++;
-        stack_head->prev = node_prev;   //27->prev = 10
+        stack_head->prev = node_prev;
     }
     return (stack_head);
 }

@@ -1,5 +1,5 @@
 NAME = push_swap
-SRCS = push_swap.c add_libft.c args_part.c errors_and_free.c stack_init.c swap.c rotate.c rev_rotate.c push.c min_max.c is_ordered.c turk_algo.c stack_len.c fill_move.c emptying_b.c is_sorted.c distance_from_top.c finish_a.c push_from_a_to_b.c 
+SRCS = push_swap.c add_libft.c args_part.c errors_and_free.c stack_init.c swap.c rotate.c rev_rotate.c push.c min_max.c is_ordered.c turk_algo.c stack_len.c optimal_move.c emptying_b.c is_sorted.c distance_from_top.c finish_a.c push_from_a_to_b.c 
 OBJS = $(SRCS:.c=.o)
 LIBFT = Libft/libft.a
 FT_PRINTF = ft_Printf/libftprintf.a

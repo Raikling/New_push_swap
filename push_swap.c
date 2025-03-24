@@ -33,17 +33,23 @@ void print_list_b(t_stack_node *head)
 
 int main(int ac, char **av)
 {
-    t_stack_node *a = NULL;
-    t_stack_node *b = NULL;
-    if (ac == 1 || validate_args(ac, av) || process_args(ac, av, &a))
+    t_stack_node    *a;
+    t_stack_node    *b; 
+
+    a = NULL;
+    b = NULL;
+    if (ac == 1)
+        return (0);
+    if (validate_args(ac, av) || process_args(ac, av, &a))
         return (1);
 
-    // print_list(a);
-    if (stack_len(a) == 3)
+    if (stack_len(a) == 3 && !is_a_ordered(a))
         sort_three(&a);
     else 
         turk(&a, &b);
-    // print_list(a);
+		// printf("is a sorted: %d\n", is_a_sorted(a));
+		// printf("is a ordered: %d\n", is_a_ordered(a));
+     print_list(a);
 
     stack_free(&a);
     stack_free(&b);

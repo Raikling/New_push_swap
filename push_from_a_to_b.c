@@ -68,11 +68,11 @@ void	push_from_a_to_b(t_stack_node **a, t_stack_node **b)
 
 	if (a == NULL)
 		return ;
-	fill_move(*a, *b);
+	optimal_move(*a, *b);
 	*a = (*a)->next;
 	while ((*a)->head != true)
 	{
-		fill_move(*a, *b);
+		optimal_move(*a, *b);
 		*a = (*a)->next;
 	}
 	move = find_cheapest_node_move(a);

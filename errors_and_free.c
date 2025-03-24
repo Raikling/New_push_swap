@@ -37,7 +37,6 @@ int error_dups(t_stack_node *a, int value)
         current = current->next;
     }
     return (count >= 2);
-    
 }
 
 void stack_free(t_stack_node **stack)

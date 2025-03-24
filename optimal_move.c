@@ -34,7 +34,7 @@ static int	max(int x, int y)
 }
 
 
-void	fill_move(t_stack_node *a, t_stack_node *b)
+void	optimal_move(t_stack_node *a, t_stack_node *b)
 {
 	a->move.rot_a = dist_w_rot(a);
 	a->move.rot_b = dist_w_rot(new_pos_b(b, a));
@@ -58,3 +58,4 @@ void	fill_move(t_stack_node *a, t_stack_node *b)
 		a->move.steps = max(-a->move.rot_a, -a->move.rot_b);
 	}
 }
+

@@ -59,7 +59,7 @@ int	dist_w_rot(t_stack_node *node);
 int	dist_w_rev_rot(t_stack_node *node);
 void	finish_a(t_stack_node **a);
 void	push_from_a_to_b(t_stack_node **a, t_stack_node **b);
-void	fill_move(t_stack_node *a, t_stack_node *b);
+void	optimal_move(t_stack_node *a, t_stack_node *b);
 void	empty_b(t_stack_node **a, t_stack_node **b);
 
 

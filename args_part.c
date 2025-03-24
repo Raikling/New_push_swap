@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-char *fill_all_args(int ac, char **av);
 
 int validate_args(int ac, char **av)
 {
@@ -55,26 +54,6 @@ int check_duplicates(t_stack_node **a, char *all_args, char **split_av)
     return 0;
 }
 
-int process_args(int ac, char **av, t_stack_node **a)
-{
-    char *all_args = fill_all_args(ac, av);
-    char **split_av = ft_split(all_args, ' ');
-
-    if (check_syntax(split_av, all_args))
-        return 1;
-    if (stack_init(a, split_av) == NULL)
-        return (free(all_args), free_split_av(split_av), 1);
-    if (check_duplicates(a, all_args, split_av))
-        return 1;
-
-    free_split_av(split_av);
-    free(all_args);
-    if (!*a)
-        return (write(2, "Error\n", 6), 1);
-    return 0;
-}
-
-
 char *fill_all_args(int ac, char **av)
 {
     int i;
@@ -93,3 +72,26 @@ char *fill_all_args(int ac, char **av)
     }
     return all_args;
 }
+
+int process_args(int ac, char **av, t_stack_node **a)
+{
+    char *all_args;
+    char **split_av;
+
+    all_args = fill_all_args(ac, av);
+    split_av = ft_split(all_args, ' ');
+    if (check_syntax(split_av, all_args))
+        return 1;
+    if (stack_init(a, split_av) == NULL)
+        return (free(all_args), free_split_av(split_av), 1);
+    if (check_duplicates(a, all_args, split_av))
+        return 1;
+    free_split_av(split_av);
+    free(all_args);
+    if (!*a)
+        return (write(2, "Error\n", 6), 1);
+    return 0;
+}
+
+
+

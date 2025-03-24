@@ -13,7 +13,7 @@ int	stack_len(t_stack_node *stack)
 	len = 1;
 	while (stack->head != true)
 	{
-		++len; //change is later
+		len++;
 		stack = stack->next;
 	}
 	return (len);
