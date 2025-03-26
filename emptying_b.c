@@ -12,7 +12,7 @@ static t_stack_node	*mid_pos_in_stack_a(t_stack_node *stack, t_stack_node *node)
 	return (stack);
 }
 
-t_stack_node	*node_new_pos_a(t_stack_node *a, t_stack_node *node)
+t_stack_node	*new_pos_in_a(t_stack_node *a, t_stack_node *node)
 {
 	t_stack_node	*min_node;
 	t_stack_node	*max_node;
@@ -50,7 +50,7 @@ void	emptying_b(t_stack_node **a, t_stack_node **b)
 			rb(b);
 	while (*b)
 	{
-		new_pos_on_a = node_new_pos_a(*a, *b);
+		new_pos_on_a = new_pos_in_a(*a, *b);
 		if (distance_w_rot(new_pos_on_a) < distance_w_rev_rot(new_pos_on_a))
 			while (new_pos_on_a != *a)
 				ra(a);
