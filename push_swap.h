@@ -12,7 +12,7 @@
 typedef struct s_move {
     int rot_a; // Rotation count for stack A
     int rot_b; // Rotation count for stack B
-    int steps; // Total steps required
+    int steps; // Total steps required 
 } t_move;
 
 typedef struct s_stack_node
@@ -55,12 +55,12 @@ void sort_three(t_stack_node **stack);
 void	turk(t_stack_node **a, t_stack_node **b);
 int	is_a_sorted(t_stack_node *a);
 int	is_b_sorted(t_stack_node *b);
-int	dist_w_rot(t_stack_node *node);
-int	dist_w_rev_rot(t_stack_node *node);
-void	finish_a(t_stack_node **a);
+int	distance_w_rot(t_stack_node *node);
+int	distance_w_rev_rot(t_stack_node *node);
+void	finalize_a(t_stack_node **a);
 void	push_from_a_to_b(t_stack_node **a, t_stack_node **b);
 void	optimal_move(t_stack_node *a, t_stack_node *b);
-void	empty_b(t_stack_node **a, t_stack_node **b);
+void	emptying_b(t_stack_node **a, t_stack_node **b);
 
 
 

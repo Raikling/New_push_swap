@@ -64,11 +64,11 @@ void	turk(t_stack_node **a, t_stack_node **b)
 		return ;
 	else if (is_a_ordered(*a))
 	{
-		finish_a(a);
+		finalize_a(a);
 		return ;
 	}
 	while (!is_a_ordered(*a))
 		push_from_a_to_b(a, b);
-	empty_b(a, b);
-	finish_a(a);
+	emptying_b(a, b);
+	finalize_a(a);
 }

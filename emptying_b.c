@@ -34,7 +34,7 @@ t_stack_node	*node_new_pos_a(t_stack_node *a, t_stack_node *node)
 
 
 
-void	empty_b(t_stack_node **a, t_stack_node **b)
+void	emptying_b(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*max_node_b;
 	t_stack_node	*new_pos_on_a;
@@ -42,7 +42,7 @@ void	empty_b(t_stack_node **a, t_stack_node **b)
 	if (*b == NULL)
 		return ;
 	max_node_b = max_node_in_stack(*b);
-	if (dist_w_rot(max_node_b) > dist_w_rev_rot(max_node_b))
+	if (distance_w_rot(max_node_b) > distance_w_rev_rot(max_node_b))
 		while (max_node_b->head != true)
 			rrb(b);
 	else
@@ -51,7 +51,7 @@ void	empty_b(t_stack_node **a, t_stack_node **b)
 	while (*b)
 	{
 		new_pos_on_a = node_new_pos_a(*a, *b);
-		if (dist_w_rot(new_pos_on_a) < dist_w_rev_rot(new_pos_on_a))
+		if (distance_w_rot(new_pos_on_a) < distance_w_rev_rot(new_pos_on_a))
 			while (new_pos_on_a != *a)
 				ra(a);
 		else
